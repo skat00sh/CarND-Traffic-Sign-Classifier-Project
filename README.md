@@ -106,7 +106,7 @@ Here are the results of the prediction:
 The model was able to correctly predict 4 other 7 traffic signs, which gives an accuracy of 57%.
  
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
 
 All the Softmax probabilities have been plotted alongside images.
 The top5 softmax probabilities for new images is shown below:
