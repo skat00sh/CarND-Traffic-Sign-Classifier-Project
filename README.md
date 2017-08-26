@@ -111,53 +111,57 @@ The model was able to correctly predict 4 other 7 traffic signs, which gives an 
 All the Softmax probabilities have been plotted alongside images.
 The top5 softmax probabilities for new images is shown below:
 
-i1_0.png: Correct Answer : Speed limit (20km/h)
-Speed limit (30km/h): 99.14%
-Speed limit (20km/h): 0.64%
-Speed limit (80km/h): 0.19%
-Speed limit (70km/h): 0.02%
-Speed limit (50km/h): 0.00%
-
-i4a_14.png: Correct Answer : Stop
-Stop: 99.84%
-No vehicles: 0.10%
-Speed limit (80km/h): 0.03%
-Speed limit (60km/h): 0.03%
-No entry: 0.00%
-
-i1_17.png: Correct Answer : No entry
-No entry: 100.00%
-Stop: 0.00%
-Speed limit (20km/h): 0.00%
-Speed limit (70km/h): 0.00%
-Bicycles crossing: 0.00%
-
-i4c_14.png: Correct Answer : Stop
-Speed limit (60km/h): 36.26%
-Speed limit (80km/h): 25.92%
-Roundabout mandatory: 25.19%
-Speed limit (30km/h): 3.91%
-Go straight or right: 3.74%
-
-i4d_14.png: Correct Answer : Stop
-Speed limit (30km/h): 94.24%
-Speed limit (20km/h): 3.65%
-Speed limit (50km/h): 1.33%
-Stop: 0.56%
-Speed limit (60km/h): 0.06%
-
-i4b_14.png: Correct Answer : Stop
-Stop: 99.92%
-No entry: 0.07%
-Speed limit (30km/h): 0.01%
-Speed limit (20km/h): 0.00%
-Speed limit (80km/h): 0.00%
+i1_0.png: Correct Answer : Speed limit (20km/h)  
+Speed limit (30km/h): 99.14%  
+Speed limit (20km/h): 0.64%  
+Speed limit (80km/h): 0.19%  
+Speed limit (70km/h): 0.02%  
+Speed limit (50km/h): 0.00%  
 
 
-i3_4.png: Correct Answer : Speed limit (70km/h)
-Speed limit (70km/h): 80.18%
-Speed limit (30km/h): 19.78%
-Speed limit (80km/h): 0.02%
-Speed limit (20km/h): 0.02%
-Speed limit (50km/h): 0.01%
+i4a_14.png: Correct Answer : Stop  
+Stop: 99.84%  
+No vehicles: 0.10%  
+Speed limit (80km/h): 0.03%  
+Speed limit (60km/h): 0.03%  
+No entry: 0.00%  
+
+
+i1_17.png: Correct Answer : No entry  
+No entry: 100.00%  
+Stop: 0.00%  
+Speed limit (20km/h): 0.00%  
+Speed limit (70km/h): 0.00%   
+Bicycles crossing: 0.00%  
+
+
+i4c_14.png: Correct Answer : Stop  
+Speed limit (60km/h): 36.26%  
+Speed limit (80km/h): 25.92%  
+Roundabout mandatory: 25.19%  
+Speed limit (30km/h): 3.91%  
+Go straight or right: 3.74%   
+
+i4d_14.png: Correct Answer : Stop  
+Speed limit (30km/h): 94.24%  
+Speed limit (20km/h): 3.65%  
+Speed limit (50km/h): 1.33%  
+Stop: 0.56%  
+Speed limit (60km/h): 0.06%  
+
+
+i4b_14.png: Correct Answer : Stop  
+Stop: 99.92%  
+No entry: 0.07%  
+Speed limit (30km/h): 0.01%  
+Speed limit (20km/h): 0.00%  
+Speed limit (80km/h): 0.00%  
+
+
+i3_4.png: Correct Answer : Speed limit (70km/h)  
+Speed limit (70km/h): 80.18%  
+Speed limit (30km/h): 19.78%  
+Speed limit (80km/h): 0.02%  
+Speed limit (20km/h): 0.02%  
+Speed limit (50km/h): 0.01%  
 
