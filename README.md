@@ -97,7 +97,7 @@ Four Different type of signboards chosen from internet. Two of the images shown 
 
 Watching the second image, an added text of 'LOVE HATE' has been added to the stop sign, so while recognising it confuses it with some speed limit sign. This is because of the text, teh neural network doesn't understand the context and hence even if additionally trained to identify English letters, it might fail.
 
-Here is the complete paper for reference: [I'm an inline-style link](https://www.google.com 
+Here is the complete paper for reference: [Robust Physical-World Attacks on Machine Learning Models](https://arxiv.org/abs/1707.08945) 
 
 Here are the results of the prediction:
 
