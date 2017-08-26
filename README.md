@@ -24,6 +24,7 @@ The goals / steps of this project are the following:
 [image7]: ./new_test_images/i4b_14.png "Traffic Sign 2"
 [image8]: ./new_test_images/i4c_14.png "Traffic Sign 2"
 [image9]: ./new_test_images/i4d_14.png "Traffic Sign 2"
+[image10]: ./vis/histEq.png "Histogram Equalisation Results"
 ## Rubric Points
 ### Please find below Validation of each [rubric points](https://review.udacity.com/#!/rubrics/481/view) below.
 ---
@@ -57,6 +58,10 @@ Shuffling of dataset using the sklearn.utils library.
 X_train, y_train = shuffle(X_train, y_train)
 
 Normalizing of images using Adaptive Histogram equalization
+![alt text][image10]
+##### Why Histogram Equalisation
+
+As is apparent from the example above that Histogram equalisation improves the contrast and thus, making it easier for neural network to identify key features fo image during image training
 
 #### 2. CNN Architecture used
 Modified LeNet for 43 labels
@@ -70,18 +75,18 @@ Modified LeNet for 43 labels
 | Convolution 2  	    | 1x1 stride, VALID padding, output = 10x10x16  | RELU					|												
 | Max pooling	      	| 2x2 stride, VALID padding, output = 5x5x16    |
 | Flatten				| output = 400									|
-| Fully connected	1	| input = 400, output = 120       	            | RELU					|												
-| Fully connected	2	| input = 120, output = 84       	            | RELU					|												
+| Fully connected	1	with Dropout| input = 400, output = 120       	            | RELU					|												
+| Fully connected	2	with Dropout| input = 120, output = 84       	            | RELU					|												
 | Fully connected	3	| input = 84, output = 10       	            |
 
 
-epochs = 10  
+epochs = 30  
 Batch size = 128 
 learning rate = 0.001.
 
-Training Accuracy(With Validation set created out of training data) = 96 (average)
-Test Accuracy = 91 (average)
-Validation Accuracy = 91 (average)
+Training Accuracy(With Validation set created out of training data) = 97 (average)
+Test Accuracy = 92 (average)
+Validation Accuracy = 94 (average)
 
 ### Test a Model on New Images
 
@@ -90,20 +95,23 @@ Four Different type of signboards chosen from internet. Two of the images shown 
 ![alt text][image8]
 ![alt text][image9] 
 
+Watching the second image, an added text of 'LOVE HATE' has been added to the stop sign, so while recognising it confuses it with some speed limit sign. This is because of the text, teh neural network doesn't understand the context and hence even if additionally trained to identify English letters, it might fail.
+
+Here is the complete paper for reference: [I'm an inline-style link](https://www.google.com 
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					|
 |:---------------------:|:---------------------------------------------:|
-| Speed limit (20km/h)       		| Speed limit (30km/h) 									|
+| Speed limit (20km/h)       		| Speed limit (60km/h) 									|
 | Stop    			  | Stop 										|
 | Stop (Noisy)				| Speed limit (30km/h)			|
-| Stop (Noisy)				| Priority road		  			|
+| Stop (Noisy)				| Speed limit (30km/h)		 |
 | Stop(With Background)    			  | Stop 										|
 | No entry				| No entry										|
-| Speed limit (70km/h)	| Speed limit (30km/h)							|
+| Speed limit (70km/h)	| Speed limit (60km/h)							|
 
-The model was able to correctly predict 4 other 7 traffic signs, which gives an accuracy of 57%.
+The model was able to correctly predict 5 other 7 traffic signs, which gives an accuracy of 71% comapring it with the images provided in with test dataset(92%) it is really low. Mostly beacuse of the 2 tricky images out of 7 that were used.
  
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. 
@@ -112,56 +120,56 @@ All the Softmax probabilities have been plotted alongside images.
 The top5 softmax probabilities for new images is shown below:
 
 i1_0.png: Correct Answer : Speed limit (20km/h)  
-Speed limit (30km/h): 99.14%  
-Speed limit (20km/h): 0.64%  
-Speed limit (80km/h): 0.19%  
-Speed limit (70km/h): 0.02%  
-Speed limit (50km/h): 0.00%  
+Speed limit (60km/h): 93.55%  
+Speed limit (30km/h): 6.45%  
+Speed limit (80km/h): 0.00%  
+Speed limit (70km/h): 0.00%  
+Traffic signals: 0.00%  
 
 
 i4a_14.png: Correct Answer : Stop  
-Stop: 99.84%  
-No vehicles: 0.10%  
-Speed limit (80km/h): 0.03%  
-Speed limit (60km/h): 0.03%  
-No entry: 0.00%  
+Stop: 99.99%  
+Speed limit (60km/h): 0.01%  
+Speed limit (80km/h): 0.00%  
+Speed limit (20km/h): 0.00%  
+Speed limit (30km/h): 0.00%  
 
 
 i1_17.png: Correct Answer : No entry  
 No entry: 100.00%  
+No vehicles: 0.00%  
 Stop: 0.00%  
-Speed limit (20km/h): 0.00%  
-Speed limit (70km/h): 0.00%   
-Bicycles crossing: 0.00%  
+Speed limit (30km/h): 0.00%  
+Turn right ahead: 0.00%  
 
 
 i4c_14.png: Correct Answer : Stop  
-Speed limit (60km/h): 36.26%  
-Speed limit (80km/h): 25.92%  
-Roundabout mandatory: 25.19%  
-Speed limit (30km/h): 3.91%  
-Go straight or right: 3.74%   
+Speed limit (30km/h): 88.00%  
+Speed limit (70km/h): 6.36%  
+Speed limit (60km/h): 2.54%  
+Speed limit (80km/h): 2.14%  
+Stop: 0.94%  
+
 
 i4d_14.png: Correct Answer : Stop  
-Speed limit (30km/h): 94.24%  
-Speed limit (20km/h): 3.65%  
-Speed limit (50km/h): 1.33%  
-Stop: 0.56%  
-Speed limit (60km/h): 0.06%  
-
+Speed limit (30km/h): 53.35%  
+Stop: 46.63%  
+General caution: 0.02%  
+Traffic signals: 0.00%  
+Speed limit (60km/h): 0.00%  
 
 i4b_14.png: Correct Answer : Stop  
-Stop: 99.92%  
-No entry: 0.07%  
-Speed limit (30km/h): 0.01%  
-Speed limit (20km/h): 0.00%  
-Speed limit (80km/h): 0.00%  
+Stop: 100.00%  
+Speed limit (30km/h): 0.00%  
+Speed limit (50km/h): 0.00%  
+Speed limit (70km/h): 0.00%  
+Yield: 0.00%  
 
 
 i3_4.png: Correct Answer : Speed limit (70km/h)  
-Speed limit (70km/h): 80.18%  
-Speed limit (30km/h): 19.78%  
-Speed limit (80km/h): 0.02%  
-Speed limit (20km/h): 0.02%  
-Speed limit (50km/h): 0.01%  
+Speed limit (60km/h): 75.45%  
+Speed limit (30km/h): 14.57%  
+Speed limit (70km/h): 9.87%  
+Speed limit (80km/h): 0.07%  
+General caution: 0.03%%    
 
