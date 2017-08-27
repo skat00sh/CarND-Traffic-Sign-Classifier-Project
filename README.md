@@ -64,6 +64,13 @@ Normalizing of images using Adaptive Histogram equalization
 As is apparent from the example above that Histogram equalisation improves the contrast and thus, making it easier for neural network to identify key features fo image during image training
 
 #### 2. CNN Architecture used
+First model was a simple bare bones LeNet architecture.  
+The problem with the initial architecture were it's inability to generalize. Also, earlier the EPOCHS used were only 10 and the performance starts to plataeu after 20 EPOCHS  
+First model used did not use the dropout technique. Addition of the technique helped increasing the accuracy and performance on the new images as well.  
+As mentioned earlier EPOCHS were incresead from 10 to 30 so as to reach the plateau condition with the training  
+Dropout technique at the last 2 Fully connnected layers, as simple it is to implement, it seems for larger training datasets like [ImageNet](http://www.image-net.org/) will perform brilliantly. It increased the genraliszing ability of my network as well.  
+A good experiment could be to replace Max-pooling with a Convolution layer as dicussed in paper titled [Striving for Simplicity: The All Convolutional Net](https://arxiv.org/abs/1412.6806)
+
 Modified LeNet for 43 labels
 
 
